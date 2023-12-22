@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <div class="content">
+        <h1>Book Catalog</h1>
+        <table>
+            <!-- Table header -->
+            <tr>
+                <td>Sno</td>
+                <td>Book Image</td>
+                <td>Book Name</td>
+                <td>Author</td>
+                <td>Price</td>
+                <td>Quantity Range</td>
+                <td>Add to Cart</td>
+            </tr>
+            <!-- Sample book entry -->
+            <tr>
+                <td>1</td>
+                <td><img src="bookimage.jpg" alt="Book 1" width="50" height="50"></td>
+                <td>Html</td>
+                <td>Author 1</td>
+                <td>₹2000</td>
+                <td><input type="range" min="1" max="10" value="1" class="quantity-range"></td>
+                <td><button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><img src="bookimage.jpg" alt="Book 1" width="50" height="50"></td>
+                <td>Java</td>
+                <td>Author 2</td>
+                <td>₹1000</td>
+                <td><input type="range" min="1" max="10" value="1" class="quantity-range"></td>
+                <td><button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button></td>
+            </tr>
+            <!-- Add more books as needed -->
+        </table>
+
+        <!-- Cart section -->
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <div id="cartItems">
+                <!-- Cart items will be displayed here -->
+            </div>
+        </div>
+        <p>Total Cost: ₹<span id="totalAmount">0.00</span></p>
+    </div>
+        </div>
+    </div>
+   
+
+    <script>
+        function addToCart(button) {
+            // Extract book details from the row
+            const row = button.parentNode.parentNode;
+            const bookName = row.cells[2].innerText;
+            const author = row.cells[3].innerText;
+            const price = parseFloat(row.cells[4].innerText.replace('₹', ''));
+            const quantity = parseInt(row.cells[5].querySelector('.quantity-range').value);
+
+            const itemCost = price * quantity;
+
+            // Create a cart item
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.classList.add('cart-item');
+            cartItemDiv.innerHTML = `
+                <p>${bookName}</p>
+                <p>${author}</p>
+                <p>${price.toFixed(2)}</p>
+                <p>Quantity: ${quantity}</p>
+                <p>Cost: ${itemCost.toFixed(2)}</p>
+            `;
+
+            // Append the cart item to the cart
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.appendChild(cartItemDiv);
+
+            // Update the total cost
+            updateTotalCost(itemCost);
+
+            // Update the button appearance
+            button.classList.add('added-to-cart');
+            
+            
+        }
+
+        function updateTotalCost(amount) {
+            const totalAmountSpan = document.getElementById('totalAmount');
+            const currentTotal = parseFloat(totalAmountSpan.textContent);
+            totalAmountSpan.textContent = (currentTotal + amount).toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
