@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+
+<style >
+    p{
+        color: red;
+    }
+</style>
+<body>
+    <div>
+        <table >
+            <tr>
+                <td>name</td>
+                <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td>
+                    enter emaill
+                </td>
+                <td>
+                    <input type="text" id="i1" onkeyup="check()" />
+                    
+                </td>
+                <td>
+                    <p id="p2"> </p>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    enter phn
+                </td>
+                <td>
+                    <input type="text" id="phn" onkeyup="phnvali()" />
+                   
+
+                </td>
+                <td>
+                    <p id="p3"> </p>
+                </td>
+            </tr>
+            
+
+        </table>
+    </div>
+    
+    
+    
+    <script>
+        
+      
+        function check() {
+            var email = document.getElementById('i1').value; 
+
+            if (!email.match(/^[A-Za-z0-9._-]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+                document.getElementById('p2').innerHTML = ("not valid");
+            } else {
+                document.getElementById('p2').innerHTML = ("valid");
+            }
+
+           
+        }
+        
+        function phnvali(){
+            phn=document.getElementById('phn');
+            if(!phn.value.match(/^[0-9].{9}$/)){
+                document.getElementById('p3').innerHTML=("not valid number");
+            }
+        else{
+        document.getElementById('p3').innerHTML=("valid");
+        
+        }
+    }       
+    
+    </script>
+</body>
+</html>
