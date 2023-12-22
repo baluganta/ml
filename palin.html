@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="i1">
+    <button onclick="check()">Click</button>
+
+    <script>
+        function check() {
+            const number = document.getElementById('i1').value;
+            const num = number.toString();
+            const reversedNum = num.split('').reverse().join('');
+            
+            if (num === reversedNum) {
+                alert(`${number} is a palindrome.`);
+            } else {
+                alert(`${number} is not a palindrome.`);
+            }
+        }
+    </script>
+</body>
+</html>
+
