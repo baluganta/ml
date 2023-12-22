@@ -1,0 +1,454 @@
+Set -1:
+String palindrome
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="i1">
+    <button onclick="check()">Click</button>
+
+    <script>
+        function check() {
+            const number = document.getElementById('i1').value;
+            const num = number.toString();
+            const reversedNum = num.split('').reverse().join('');
+            
+            if (num === reversedNum) {
+                alert(`${number} is a palindrome.`);
+            } else {
+                alert(`${number} is not a palindrome.`);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+Simple order form
+Program:
+<html>
+<body>
+<%! String Items[]={"DVD","CD","Diskette"};
+ double price[]={19.99,12.99,1.99};
+ int Quantity[]={2,9,24};
+ double TotalPrice[]=new double[Items.length]; %>
+ <table border="1px">
+ <tr>
+ <td>Item</td>
+ <td> Price </td>
+ <td>Quantity</td>
+ <td>Total Price </td>
+ </tr>
+ <% for(int i=0;i<Items.length;i++){
+ TotalPrice[i]=price[i]*Quantity[i]; %>
+ <tr>
+ <td><% out.println(Items[i]); %></td>
+ <td><% out.println(price[i]); %></td>
+ <td><% out.println(Quantity[i]); %></td>
+ <td><% out.println(TotalPrice[i]); %></td>
+ </tr>
+ <%} %>
+ </table>
+</body>
+</html>
+Set -2:
+Angular js
+<html> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+<body> 
+<div ng-app="myApp" ng-controller="myCtrl"> 
+ <p>The time is:</p> 
+ <h1>{{theTime}}</h1> 
+<p>This header will change after two seconds:</p> 
+<h1>{{myHeader}}</h1> 
+<p>The url of this page is:</p> 
+<h3>{{myUrl}}</h3> 
+</div> 
+<script> 
+var app = angular.module('myApp', []); 
+app.controller('myCtrl', function($scope, $timeout, $location, $interval) { 
+ $scope.myUrl = $location.absUrl(); 
+ $scope.myHeader = "Hi"; 
+ $scope.theTime = new Date().toLocaleTimeString(); 
+ $interval(function () { 
+ $scope.theTime = new Date().toLocaleTimeString(); 
+ }, 1000); 
+ $timeout(function () { 
+ $scope.myHeader = "Hello"; 
+ }, 2000); 
+ $timeout(function () { 
+ $scope.myHeader = "How are you today?"; 
+ }, 4000); 
+}); 
+</script> </body> </html>
+Factorial
+fact.html 
+<html> 
+<body> 
+<form action="Fact.jsp" method="post"> 
+ <input type="text" name="n"><br> 
+ <input type="submit" > 
+</form> 
+</body> 
+</html> 
+fact.jsp 
+<!DOCTYPE html> 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
+ pageEncoding="ISO-8859-1"%> 
+<!DOCTYPE html> 
+<html> 
+<body> 
+<%! long a; %> 
+<%! long Fact(long n){ 
+ if(n<=1) 
+ return 1; 
+ return n*Fact(n-1); 
+} %> 
+<% a=Integer.parseInt(request.getParameter("n")); 
+ out.print("Factorial of "+a+" : "+Fact(a));%> 
+</body></html>
+Set 3
+XML
+XSLT
+Set -4
+node js application using http,url,fs. 
+abc.html 
+<html> 
+<body> 
+<h1>ABC</h1> 
+<h4>This is abc.html file </h4> 
+<p>abc</p> 
+</body> 
+</html> 
+xyz.html 
+<html> 
+<body> 
+<h1>XYZ</h1> 
+<h4> This is xyz.html file </h4> 
+<p>xyz</p> 
+</body> 
+</html> 
+Fileserver.js 
+var http = require('http'); 
+var url = require('url'); 
+var fs = require('fs'); 
+http.createServer(function (req, res) { 
+ var q = url.parse(req.url, true); 
+ var filename = "." + q.pathname; 
+ fs.readFile(filename, function(err, data) { 
+ if (err) { 
+ res.writeHead(404, {'Content-Type': 'text/html'}); 
+ return res.end("404 Not Found"); 
+ } 
+ res.writeHead(200, {'Content-Type': 'text/html'}); 
+ res.write(data); 
+ return res.end(); 
+ }); 
+}).listen(8080); 
+ Develop jsp program to handle http services
+Set-5
+1.Simple order form
+<html> 
+<body> 
+<%! String Items[]={"DVD","CD","Diskette"}; 
+ double price[]={19.99,12.99,1.99}; 
+ int Quantity[]={2,9,24}; 
+ double TotalPrice[]=new double[Items.length]; %> 
+ <table border="1px"> 
+ <tr> 
+ <td>Item</td> 
+ <td> Price </td> 
+ <td>Quantity</td> 
+ <td>Total Price </td> 
+ </tr> 
+ <% for(int i=0;i<Items.length;i++){ 
+ TotalPrice[i]=price[i]*Quantity[i]; %> 
+ <tr> 
+ <td><% out.println(Items[i]); %></td> 
+ <td><% out.println(price[i]); %></td> 
+ <td><% out.println(Quantity[i]); %></td> 
+ <td><% out.println(TotalPrice[i]); %></td> 
+ </tr> 
+ <%} %> 
+ </table> 
+</body> 
+</html>
+2.anguarjs controller
+<html> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+<body> 
+<div ng-app="myApp" ng-controller="myCtrl"> 
+ <p>The time is:</p> 
+ <h1>{{theTime}}</h1> 
+<p>This header will change after two seconds:</p> 
+<h1>{{myHeader}}</h1> 
+<p>The url of this page is:</p> 
+<h3>{{myUrl}}</h3> 
+</div> 
+<script> 
+var app = angular.module('myApp', []); 
+app.controller('myCtrl', function($scope, $timeout, $location, $interval) { 
+ $scope.myUrl = $location.absUrl(); 
+ $scope.myHeader = "Hi"; 
+ $scope.theTime = new Date().toLocaleTimeString(); 
+ $interval(function () { 
+ $scope.theTime = new Date().toLocaleTimeString(); 
+ }, 1000); 
+ $timeout(function () { 
+ $scope.myHeader = "Hello"; 
+ }, 2000); 
+ $timeout(function () { 
+ $scope.myHeader = "How are you today?"; 
+ }, 4000); 
+}); 
+</script> </body> </html>
+Set-6
+JDBC(insert,update,delete)
+home.html 
+<html> 
+<body> 
+ <h1>Welcome student database</h1> 
+ <p>choose an action:</p> 
+ <ul><li><a href="insert.html"> Insert</a></li> 
+ <li><a href ="update.html"> Update</a></li> 
+ <li><a href="delete.html"> Delete</a></li></ul> 
+</body> 
+</html> 
+insert.html 
+<html> 
+<body><form action="insert.jsp" method="Post"> 
+ <h1 align="center">Insert</h1> 
+ <table align="center"> 
+ <tr><td>Name :</td> 
+ <td><input type="text" name="sname"/></td></tr> 
+ <tr><td>Roll no:</td> 
+ <td><input type="text" name="srno"/></td></tr> 
+ <tr><td>cgpa :</td> 
+ <td><input type="text" name="cgpa"/></td></tr> 
+ <tr><td><input type="submit" value="insert" /></td> 
+ <td><input type="reset" value="clear"/></td></tr> 
+ </table> 
+ </form> 
+</body> 
+</html> 
+insert.jsp 
+<%@page import="java.sql.*" %> 
+<% 
+String name=request.getParameter("sname"); 
+int rno=Integer.parseInt(request.getParameter("srno")); 
+String cgpa=request.getParameter("cgpa"); 
+//out.println(name+" "+rno+""+cgpa); 
+try{ 
+ Class.forName("com.mysql.jdbc.Driver"); 
+ Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cai", "root", 
+"root"); 
+ PreparedStatement ps=con.prepareStatement("insert into std values(?,?,?)"); 
+ ps.setInt(1, rno); 
+ ps.setString(2, name); 
+ ps.setString(3,cgpa); 
+ int i=ps.executeUpdate(); 
+ if (i!=0){ 
+ out.println("inserted.."); 
+ } 
+ else{ 
+ out.println("not inserted.."); 
+ } 
+} 
+catch (Exception e){out.print(e);} 
+%> 
+update.html 
+<body> 
+ <form action="update.jsp" method="post"> 
+ <h1 align="center"> Update </h1> 
+ <table align="center"> 
+ <tr><td>Name:</td> 
+ <td><input type="text" name="sname"/></td> 
+ </tr> 
+ <tr><td>Roll no: </td> 
+ <td><input type="number" name="srno"/></td></tr> 
+ <tr><td>cgpa :</td> 
+ <td><input type="text" name="cgpa"/></td></tr> 
+ <tr><td><input type="submit" value="Update" /></td></tr> 
+ </table> 
+ </form> 
+</body> 
+update.jsp 
+<%@page import="java.sql.*" %> 
+<% 
+String name=request.getParameter("sname"); 
+int rno=Integer.parseInt(request.getParameter("srno")); 
+String cgpa=request.getParameter("cgpa"); 
+try{ 
+ Class.forName("com.mysql.jdbc.Driver"); 
+ Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cai", "root", 
+"root"); 
+ PreparedStatement ps = con.prepareStatement("UPDATE std SET rno=?, cgpa=? WHERE 
+name=?"); 
+ ps.setInt(1, rno); 
+ ps.setString(2, cgpa); 
+ ps.setString(3,name); 
+ int i=ps.executeUpdate(); 
+ if (i!=0){ 
+ out.println("updated.."); 
+ } 
+ else{ 
+ out.println("not updated.."); 
+ } 
+} 
+catch (Exception e){out.print(e);}%> 
+delete.html 
+<body> 
+ <form action="del.jsp" method="post"> 
+ <h1 align="center" >Delete</h1> 
+ <table align="center"> 
+ <tr><td>Name :</td> 
+ <td><input type="text" name="sname"/></td></tr> 
+ <tr><td><input type="submit" value="Delete"/></td></tr> 
+ </table> 
+ </form> 
+</body> 
+delete.jsp 
+<%@page import="java.sql.*" %> 
+<% String name=request.getParameter("sname"); 
+try{ 
+ Class.forName("com.mysql.jdbc.Driver"); 
+ Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cai", "root", 
+"root"); 
+ PreparedStatement ps = con.prepareStatement("DELETE FROM `std` WHERE name=?"); 
+ ps.setString(1,name); 
+ 
+ int i=ps.executeUpdate(); 
+ if (i!=0){ 
+ out.println("Deleted.."); 
+ } 
+ else{ 
+ out.println("not Deleted.."); 
+ } 
+} 
+catch (Exception e){out.print(e);}%>
+Set-7
+Validate registration form
+JSP for date and time
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date and Time</title>
+</head>
+<body> 
+<%@ page import="java.util.Date" %> 
+Today is: <%= new Date() %> 
+</body>
+Set 8
+Node js application using http url fs
+<html> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+<body> 
+<div ng-app="myApp" ng-controller="myCtrl"> 
+ <p>The time is:</p> 
+ <h1>{{theTime}}</h1> 
+<p>This header will change after two seconds:</p> 
+<h1>{{myHeader}}</h1> 
+<p>The url of this page is:</p> 
+<h3>{{myUrl}}</h3> 
+</div> 
+<script> 
+var app = angular.module('myApp', []); 
+app.controller('myCtrl', function($scope, $timeout, $location, $interval) { 
+ $scope.myUrl = $location.absUrl(); 
+ $scope.myHeader = "Hi"; 
+ $scope.theTime = new Date().toLocaleTimeString(); 
+ $interval(function () { 
+ $scope.theTime = new Date().toLocaleTimeString(); 
+ }, 1000); 
+ $timeout(function () { 
+ $scope.myHeader = "Hello"; 
+ }, 2000); 
+ $timeout(function () { 
+ $scope.myHeader = "How are you today?"; 
+ }, 4000); 
+}); 
+</script> </body> </html>
+Css internal, external, inline
+Set-10
+Develop a JSP page that validates that Credentials given by the user in the login page
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<from method="post">
+<table>
+<tr>
+<td>User name: </td><td><input type="text"
+name="user"/></td>
+</tr>
+<tr>
+<td> password:</td>
+<td>
+<input type="password" name="pass"/>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit" value="insert" />
+</td>
+<td>
+<input type="reset" value="clear"/>
+</td>
+</tr>
+</table>
+</from>
+</body>
+</html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welocome</title>
+</head>
+<body>
+<%@page import="java.sql.*" %>
+<%
+ String user=request.getParameter("user");
+ String pasw=request.getParameter("pass");
+ try{
+ Class.forName("com.mysql.jdbc.Driver");
+ Connection 
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cai", "root", 
+"root");
+ PreparedStatement ps=con.prepareStatement("select name from std where 
+name=? and rno=?");
+ ps.setString(1,user);
+ ps.setString(2,pasw);
+ ResultSet rs=ps.executeQuery();
+ if(rs.next()){
+ %>
+ <h1>
+ welcome <% out.println(user); %>
+ </h1>
+ 
+ <%
+ }
+ else{
+ out.println("Failed");
+ }
+ 
+ }
+ catch (Exception e){
+ 
+ }
+%>
+</body>
+</html>
