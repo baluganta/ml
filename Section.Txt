@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	session.setAttribute("username","manasa");
+%>
+<a href="ses2.jsp">cilck me</a>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	String name=(String)session.getAttribute("username");
+    %>
+    <h1>hellooo <%=name %></h1>
+
+</body>
+</html>
